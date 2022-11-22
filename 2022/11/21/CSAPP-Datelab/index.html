@@ -21,16 +21,16 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="BitXor题目要求仅仅使用~与&amp;实现^操作使用操作符不超过14个 1234567&#x2F;* * bitXor - x^y using only ~ and &amp; *   Example: bitXor(4, 5) &#x3D; 1 *   Legal ops: ~ &amp; *   Max ops: 14 *   Rating: 1 *&#x2F; 解题思路热身题吧，比较简单只需要写出Xor的最简与非式即">
+    <meta name="description" content="Your goal is to modify your copy of bits.c so that it passes all thetests in btest without violating any of the coding guidelines.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSAPP Datelab">
 <meta property="og:url" content="http://example.com/2022/11/21/CSAPP-Datelab/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="BitXor题目要求仅仅使用~与&amp;实现^操作使用操作符不超过14个 1234567&#x2F;* * bitXor - x^y using only ~ and &amp; *   Example: bitXor(4, 5) &#x3D; 1 *   Legal ops: ~ &amp; *   Max ops: 14 *   Rating: 1 *&#x2F; 解题思路热身题吧，比较简单只需要写出Xor的最简与非式即">
+<meta property="og:description" content="Your goal is to modify your copy of bits.c so that it passes all thetests in btest without violating any of the coding guidelines.">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2022/11/21/CSAPP-Datelab/b2t.jpg">
 <meta property="article:published_time" content="2022-11-21T11:37:13.000Z">
-<meta property="article:modified_time" content="2022-11-21T15:44:24.128Z">
+<meta property="article:modified_time" content="2022-11-22T02:01:02.297Z">
 <meta property="article:author" content="Eureka">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2022/11/21/CSAPP-Datelab/b2t.jpg">
@@ -118,7 +118,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#BitXor"><span class="nav-number">1.</span> <span class="nav-text">BitXor</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E8%A6%81%E6%B1%82"><span class="nav-number">1.1.</span> <span class="nav-text">题目要求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="nav-number">1.2.</span> <span class="nav-text">解题思路</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tmin"><span class="nav-number">2.</span> <span class="nav-text">Tmin</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E8%A6%81%E6%B1%82-1"><span class="nav-number">2.1.</span> <span class="nav-text">题目要求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF-1"><span class="nav-number">2.2.</span> <span class="nav-text">解题思路</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#BitXor"><span class="nav-number">1.</span> <span class="nav-text">BitXor</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E8%A6%81%E6%B1%82"><span class="nav-number">1.1.</span> <span class="nav-text">题目要求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="nav-number">1.2.</span> <span class="nav-text">解题思路</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tmin"><span class="nav-number">2.</span> <span class="nav-text">Tmin</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E8%A6%81%E6%B1%82-1"><span class="nav-number">2.1.</span> <span class="nav-text">题目要求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF-1"><span class="nav-number">2.2.</span> <span class="nav-text">解题思路</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IsTmax"><span class="nav-number">3.</span> <span class="nav-text">IsTmax</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E8%A6%81%E6%B1%82-2"><span class="nav-number">3.1.</span> <span class="nav-text">题目要求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF-2"><span class="nav-number">3.2.</span> <span class="nav-text">解题思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%86%E8%8A%82"><span class="nav-number">3.3.</span> <span class="nav-text">细节</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AllOddBits"><span class="nav-number">4.</span> <span class="nav-text">AllOddBits</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E8%A6%81%E6%B1%82-3"><span class="nav-number">4.1.</span> <span class="nav-text">题目要求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF-3"><span class="nav-number">4.2.</span> <span class="nav-text">解题思路</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Negate"><span class="nav-number">5.</span> <span class="nav-text">Negate</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E8%A6%81%E6%B1%82-4"><span class="nav-number">5.1.</span> <span class="nav-text">题目要求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF-4"><span class="nav-number">5.2.</span> <span class="nav-text">解题思路</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -131,19 +131,14 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">2</span>
-        <span class="site-state-item-name">categories</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-          <a href="/tags/">
         <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">tags</span></a>
+        <span class="site-state-item-name">categories</span></a>
       </div>
   </nav>
 </div>
@@ -209,9 +204,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2022-11-21 19:37:13 / Modified: 23:44:24" itemprop="dateCreated datePublished" datetime="2022-11-21T19:37:13+08:00">2022-11-21</time>
+      <time title="Created: 2022-11-21 19:37:13" itemprop="dateCreated datePublished" datetime="2022-11-21T19:37:13+08:00">2022-11-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-11-22 10:01:02" itemprop="dateModified" datetime="2022-11-22T10:01:02+08:00">2022-11-22</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -233,7 +234,9 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="BitXor"><a href="#BitXor" class="headerlink" title="BitXor"></a>BitXor</h2><h3 id="题目要求"><a href="#题目要求" class="headerlink" title="题目要求"></a>题目要求</h3><p>仅仅使用<code>~</code>与<code>&amp;</code>实现<code>^</code>操作<br>使用操作符不超过14个</p>
+        <p>Your goal is to modify your copy of bits.c so that it passes all the<br>tests in btest without violating any of the coding guidelines.</p>
+<span id="more"></span>
+<h2 id="BitXor"><a href="#BitXor" class="headerlink" title="BitXor"></a>BitXor</h2><h3 id="题目要求"><a href="#题目要求" class="headerlink" title="题目要求"></a>题目要求</h3><p>仅仅使用<code>~</code>与<code>&amp;</code>实现<code>^</code>操作<br>使用操作符不超过14个</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * bitXor - x^y using only ~ and &amp;</span></span><br><span class="line"><span class="comment"> *   Example: bitXor(4, 5) = 1</span></span><br><span class="line"><span class="comment"> *   Legal ops: ~ &amp;</span></span><br><span class="line"><span class="comment"> *   Max ops: 14</span></span><br><span class="line"><span class="comment"> *   Rating: 1</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
 <h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>热身题吧，比较简单<br>只需要写出Xor的最简与非式即可</p>
 <p>$x \oplus y = (x \cdot \bar y) + (\bar x \cdot y) = \overline{(\overline{((x \cdot \bar y) + (\bar x \cdot y))})} = \overline{(\overline{(x \cdot \bar{y})} \cdot \overline{(\bar{x} \cdot y)})}$</p>
@@ -244,11 +247,50 @@
 <p>For vector</p>
 <p>$\vec{x} = \left[x_{w - 1}, x_{w - 2},  .. ,x_{0}\right]$</p>
 <p>$B2T_{w}(\vec{x}) = -x_{w - 1} \cdot 2 ^ {w - 1} + \sum_{i = 0}^{w - 2}x_{i} \cdot 2 ^{i}$</p>
-<script type="math/tex; mode=display">
-\begin{align*}
-x = x * b
-\end{align*}</script><p>可以看到，负数的权重完全在最高位上面，其余的都是整数的权重了</p>
+<p>可以看到，负数的权重完全在最高位上面，其余的都是整数的权重了</p>
 <p><img src="/2022/11/21/CSAPP-Datelab/b2t.jpg" alt="B2T"></p>
+<p>所以只需要让这个32位数的最高位为1，其余位置0即可<br>利用位移运算非常容易做到，只需要一个operator即可</p>
+<h2 id="IsTmax"><a href="#IsTmax" class="headerlink" title="IsTmax"></a>IsTmax</h2><h3 id="题目要求-2"><a href="#题目要求-2" class="headerlink" title="题目要求"></a>题目要求</h3><p>判断一个数是否是32位补码的最大值，如果是则返回1，不是则返回0</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * isTmax - returns 1 if x is the maximum, two&#x27;s complement number,</span></span><br><span class="line"><span class="comment"> *     and 0 otherwise</span></span><br><span class="line"><span class="comment"> *   Legal ops: ! ~ &amp; ^ | +</span></span><br><span class="line"><span class="comment"> *   Max ops: 10</span></span><br><span class="line"><span class="comment"> *   Rating: 1</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<h3 id="解题思路-2"><a href="#解题思路-2" class="headerlink" title="解题思路"></a>解题思路</h3><p>从补码的表示方式我们可以得知，一个w位的补码的最大值的表示形式是除了最高位以外，所有位均置1<br>这就给予了我们一个有趣的特性，即：</p>
+<p><strong>$(MAX)_T + 1 == \sim(MAX)_T$</strong></p>
+<p>也就是说，最大值的补码<strong>取反</strong>和<strong>加1</strong>后的结果是相同的</p>
+<blockquote>
+<p>暂且将这种情况称为伪溢出吧，因为一个最大的正数加1之后因为溢出，就变成了一个最大的负数</p>
+</blockquote>
+<p>但是在测试的时候会发现又一个无法通过的测试样例——<strong>$-1$</strong></p>
+<p><strong>$(-1)_T + 1 == \sim(-1)_T$</strong></p>
+<blockquote>
+<p>而这一切都要’归功’与溢出这一看似是一个BUG的特性，$(-1)_T$加1后会溢出，所以会重新变为0</p>
+</blockquote>
+<p>因此还需要增加一个判断逻辑来避免$-1$的情况</p>
+<h3 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h3><p>虽然是上述逻辑描述起来很简单，但是实际上由于题目要求只能使用限定的逻辑运算符来完成，所以要把逻辑转化为代码还是有点绕的</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// pseudocode</span></span><br><span class="line"><span class="keyword">if</span>((x + <span class="number">1</span> == ~x) &amp;&amp; (x != <span class="number">-1</span>))</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>需要考虑的问题主要有3点</p>
+<ol>
+<li>如何通过逻辑运算符来表示相等判断<code>==</code></li>
+<li>如何表示<code>&amp;&amp;</code>运算</li>
+<li>如何根据结果来<code>return</code>0或者1</li>
+</ol>
+<p>其实<code>==</code>的判断相对简单，只需要利用<code>^</code>运算的特性——相同为0，不同为1，即可实现一个相等的判断</p>
+<blockquote>
+<p>虽然结果是相反的，与其说是相等判断，倒不如说是不等判断~</p>
+</blockquote>
+<p>那么有了第一个映射关系<code>(x --&gt; equal)</code>之后，我们就可以把一个多值(任意的一个32位补码)映射为一个二元的值(0 or 1)</p>
+<p>这样一来，我们就可以很轻松的将这个二元的值映射到<code>return value</code>去了，只不过这里需要用到C语言的一个特殊的运算——<code>!</code><br><code>!</code>把所有非零的值映射为0，而把0映射为1<br>利用这个特性，第三个问题也很好解决了</p>
+<p>而第2个问题中的<code>&amp;&amp;</code>问题则更像是一种高层次的抽象描述，很难通过低层次的逻辑描述来表达<br>故而可以选择另一种思路，把<code>&amp;&amp; x != -1</code>又进行一层转化</p>
+<p>也就是说，我们需要找到$MAX$和$(-1)_{T}$之间的区别，就像之前找到的$MAX$和其他数的区别(加1与取反溢出的结果相同)一样</p>
+<p>其实很容易发现，$MAX$与$(-1)_{T}$取反后的结果明显不同，一个是$(MIN)_{T}$($10000…0$)，另一个则是全0($0000…0$)</p>
+<p>再综合前面的判断就很好写了~</p>
+<blockquote>
+<p>Hint: 需要用到<code>!</code>与<code>^</code>来与前面的条件综合判断</p>
+</blockquote>
+<h2 id="AllOddBits"><a href="#AllOddBits" class="headerlink" title="AllOddBits"></a>AllOddBits</h2><h3 id="题目要求-3"><a href="#题目要求-3" class="headerlink" title="题目要求"></a>题目要求</h3><p>判断一个32位数的所有奇数位(1, 3, 5, 7,…)是否全都是1</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * allOddBits - return 1 if all odd-numbered bits in word set to 1</span></span><br><span class="line"><span class="comment"> *   where bits are numbered from 0 (least significant) to 31 (most significant)</span></span><br><span class="line"><span class="comment"> *   Examples allOddBits(0xFFFFFFFD) = 0, allOddBits(0xAAAAAAAA) = 1</span></span><br><span class="line"><span class="comment"> *   Legal ops: ! ~ &amp; ^ | + &lt;&lt; &gt;&gt;</span></span><br><span class="line"><span class="comment"> *   Max ops: 12</span></span><br><span class="line"><span class="comment"> *   Rating: 2</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<h3 id="解题思路-3"><a href="#解题思路-3" class="headerlink" title="解题思路"></a>解题思路</h3><h2 id="Negate"><a href="#Negate" class="headerlink" title="Negate"></a>Negate</h2><h3 id="题目要求-4"><a href="#题目要求-4" class="headerlink" title="题目要求"></a>题目要求</h3><p>返回一个数的负数</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * negate - return -x</span></span><br><span class="line"><span class="comment"> *   Example: negate(1) = -1.</span></span><br><span class="line"><span class="comment"> *   Legal ops: ! ~ &amp; ^ | + &lt;&lt; &gt;&gt;</span></span><br><span class="line"><span class="comment"> *   Max ops: 5</span></span><br><span class="line"><span class="comment"> *   Rating: 2</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<h3 id="解题思路-4"><a href="#解题思路-4" class="headerlink" title="解题思路"></a>解题思路</h3><p>简单题，了解原码和补码的转化规则即可</p>
+<p>$(x)_{T} = \sim(x)_{O} + 1$</p>
 
     </div>
 
@@ -262,9 +304,6 @@ x = x * b
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/11/21/First-Blog/" rel="prev" title="First Blog">
-                  <i class="fa fa-chevron-left"></i> First Blog
-                </a>
             </div>
             <div class="post-nav-item">
                 <a href="/2022/11/21/CSAPP-Boomblab/" rel="next" title="CSAPP Boomblab">
