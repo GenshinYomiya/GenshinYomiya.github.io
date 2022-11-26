@@ -30,7 +30,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2022/11/26/Unix-utilities/user_kernel.png">
 <meta property="article:published_time" content="2022-11-26T13:26:58.000Z">
-<meta property="article:modified_time" content="2022-11-26T15:17:55.688Z">
+<meta property="article:modified_time" content="2022-11-26T15:32:28.005Z">
 <meta property="article:author" content="Eureka">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2022/11/26/Unix-utilities/user_kernel.png">
@@ -206,7 +206,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2022-11-26 21:26:58 / Modified: 23:17:55" itemprop="dateCreated datePublished" datetime="2022-11-26T21:26:58+08:00">2022-11-26</time>
+      <time title="Created: 2022-11-26 21:26:58 / Modified: 23:32:28" itemprop="dateCreated datePublished" datetime="2022-11-26T21:26:58+08:00">2022-11-26</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -232,7 +232,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>1.4k</span>
+      <span>1.6k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -291,6 +291,11 @@
 <h3 id="初探xv6系统调用"><a href="#初探xv6系统调用" class="headerlink" title="初探xv6系统调用"></a>初探xv6系统调用</h3><p>虽然sleep这个题目本身很简单，但是它背后的系统调用的过程还是很有趣的，这次就以sleep这一个系统调用为例，来简单地探索一下xv6系统调用的前世今生</p>
 <p>首先，我们编写的所有程序都是运行在用户态(user model)的，而像sleep这种系统调用则是运行在内核态(kernel model)</p>
 <p><img src="/2022/11/26/Unix-utilities/user_kernel.png" alt="A kernel and two user processes"></p>
+<p>在<code>user/user.h</code>有所有的系统调用的函数声明，所以在用户态是是可以调用并且可以通过编译的<br>接下来在<code>user/usys.s</code>中有一段<code>Risc-v</code>的汇编，主要是将系统调用号存放在<code>a7</code>寄存器中，并且调用<code>ecall</code>和<code>ret</code>这一对指令来实现系统调用，而<code>ecall</code>实际上是一条异常处理指令，这条指令会保存上下文(寄存器的值)，并且跳转到以<code>mtevc</code>为入口地址的内存中，并且根据<code>mcause</code>将<code>pc</code>指向内核的相应的异常处理程序的内存位置</p>
+<!-- TODO: 可以说的更加详细一点 -->
+<blockquote>
+<p>感谢NJU的<a target="_blank" rel="noopener" href="https://nju-projectn.github.io/ics-pa-gitbook/ics2022/">PA</a>送的折磨~</p>
+</blockquote>
 
     </div>
 
